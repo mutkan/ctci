@@ -60,4 +60,55 @@ public class SolutionTest {
         assertTrue(ListNodeUtils.equals(head,expected));
     }
 
+
+
+    @Test
+    public void testDeleteDupsWithoutBuffer_IfNodeNull(){
+        ListNode head = null;
+        ListNode expected = null;
+
+        solution.deleteDupsWithNoBuffer(head);
+
+        assertEquals(head, expected);
+    }
+
+    @Test
+    public void testDeleteDupsWithoutBuffer_1(){
+        int[] headArray = {1,1,2};
+        ListNode head = ListNodeUtils.createListFromArray(headArray);
+
+        int[] expectedArray = {1,2};
+        ListNode expected = ListNodeUtils.createListFromArray(expectedArray);
+
+        solution.deleteDupsWithNoBuffer(head);
+
+        assertTrue(ListNodeUtils.equals(head, expected));
+    }
+
+    @Test
+    public void testDeleteDupsWithoutBuffer_2(){
+        int[] headArray = {1,1,2,2};
+        ListNode head = ListNodeUtils.createListFromArray(headArray);
+
+        int[] expectedArray = {1,2};
+        ListNode expected = ListNodeUtils.createListFromArray(expectedArray);
+
+        solution.deleteDupsWithNoBuffer(head);
+
+        assertTrue(ListNodeUtils.equals(head, expected));
+    }
+
+    @Test
+    public void testDeleteDupsWithoutBuffer_3(){
+        int[] headArray = {1,1,2,3,3};
+        ListNode head = ListNodeUtils.createListFromArray(headArray);
+
+        int[] expectedArray = {1,2,3};
+        ListNode expected = ListNodeUtils.createListFromArray(expectedArray);
+
+        solution.deleteDupsWithNoBuffer(head);
+
+        assertTrue(ListNodeUtils.equals(head,expected));
+    }
+
 }
