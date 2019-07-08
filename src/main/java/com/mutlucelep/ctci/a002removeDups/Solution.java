@@ -35,5 +35,18 @@ public class Solution {
         }
     }
 
-  
+    void deleteDupsWithNoBuffer(ListNode n) {
+        ListNode current = n;
+        while (current != null) {
+            ListNode runner = current;
+            while (runner.getNext() != null) {
+                if (runner.getNext().getVal() == current.getVal()) {
+                    runner.setNext(runner.getNext().getNext());
+                } else {
+                    runner = runner.getNext();
+                }
+            }
+            current = current.getNext();
+        }
+    }
 }
